@@ -29,7 +29,8 @@ jobs:
         run: mvn sonar:sonar \
           -Dsonar.projectKey="marionChineaudEPFtpGitHub" \
           -Dsonar.organization="marionChineaudEPF" \
-          -Dsonar.login="${SONAR_TOKEN}"
+          -Dsonar.login="${SONAR_TOKEN}" \
+          -f ./simple-api/pom.xml
 
   build-and-push-docker-image:
     needs: test-backend
